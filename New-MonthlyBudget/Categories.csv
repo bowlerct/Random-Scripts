@@ -1,0 +1,76 @@
+Parent,Category,Budget
+Donations,Charity 1,200
+Donations,Charity 2,0
+Donations,Tithe,200
+Entertainment,CDs,0
+Entertainment,Concerts,0
+Entertainment,Live theater,0
+Entertainment,Movies,10
+Entertainment,Newspaper,0
+Entertainment,Other Entertainment,120
+Entertainment,Sporting events,20.83
+Entertainment,Vacation,0
+Entertainment,Video/DVD,0
+Food,Dining out,100
+Food,Groceries,650
+Food,Other Food,0
+Housing,Cable/Internet,100
+Housing,Electricity,65
+Housing,Gas,62
+Housing,Maintenance/Repairs,100
+Housing,Mortgage/Rent,3400
+Housing,Other Housing,0
+Housing,Phone,270
+Housing,Supplies,41.67
+Housing,Waste removal,0
+Housing,Water/Trash/Sewer and Gas,50
+Insurance,Health,0
+Insurance,Home,143
+Insurance,Life,0
+Insurance,Other Insurance,0
+Investments,Investment account,0
+Investments,Other Investments,0
+Investments,Retirement account,0
+Legal,Alimony,0
+Legal,Attorney,0
+Legal,Other Legal,0
+Legal,Payments on lien or judgment,0
+Loans,Credit card,0
+Loans,Other Loans,0
+Loans,Personal Loans,0
+Loans,Student Loans,0
+Personal,Clothing,41.67
+Personal,Dry cleaning,8.33
+Personal,Hair/nails,53.33
+Personal,Health club,0
+Personal,Medical,16.67
+Personal,Organization dues or fees,0
+Personal,Other Personal Care,41.67
+Personal,Pocket Cash,200
+Pets,Other Pets,20
+Pets,Pet Food,60
+Pets,Pet Grooming,35
+Pets,Pet Medical,8.33
+Pets,Pet Toys,5
+Rental,Rental Mortgage,1679
+Rental,Rental Fees,444
+Rental,Rental Phone,0
+Rental,Rental Electricity,0
+Rental,Rental Gas,0
+Rental,Rental Water/Trash/Sewer and Gas,0
+Rental,Rental Cable/Internet,0
+Rental,Rental Waste removal,0
+Rental,Rental Maintenance/Repairs,0
+Rental,Rental Supplies,0
+Rental,Rental Other,0
+Taxes,Federal,0
+Taxes,Local,0
+Taxes,Other Taxes,0
+Taxes,State,41.67
+Transportation,Bus/taxi fare,20
+Transportation,Fuel,350
+Transportation,Insurance,0
+Transportation,Licensing,0
+Transportation,Maintenance,38.33
+Transportation,Other Transportation,0
+Transportation,Vehicle payment,410
