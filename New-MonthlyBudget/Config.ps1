@@ -1,4 +1,36 @@
 ﻿
+<#
+Object to hold information about a category
+#>
+$Source = @"
+using System;
+
+public class Category {
+  public string parent;
+  public string name;
+  public double budget;
+  public double currentCost;
+  private double costToDate;
+  
+  public Category():this(string.Empty, string.Empty, 0.0 ){ }
+
+  public Category(string parent, string name, double budget){
+    this.parent = parent;
+    this.name = name;
+    this.budget = budget;
+    this.currentCost = 0.0;
+    this.costToDate = 0.0;
+  }
+
+  public double getCostToDate { get { return costToDate; } }
+  public double addCostToDate { set { costToDate += value; } }
+
+}
+"@
+
+Add-Type -Language CSharp -TypeDefinition $Source
+Remove-Variable Source
+
 $script:LogFolder = "$rootPath\Log"
 $script:year = $(Get-Date).Year
 
@@ -13,7 +45,7 @@ $script:userIncome += 2900 + 2900
 #$script:userIncome += 2900
 
 
-<# Reports #>
+<# Report layout #>
 $script:htmlPartsStart = "<!DOCTYPE html>
 <html>
 <head>
@@ -45,14 +77,3 @@ Generated on $(Get-Date)
 
 $script:htmlLeftPanelCats = "Housing","Rental","Transportation","Insurance","Personal"
 $script:htmlRightPanelCats = "Food","Entertainment","Loans","Taxes","Investments","Donations","Legal","Pets"
-
-<# Categories with budget #>
-$script:categories = Import-Csv "$rootPath\Categories.csv"
-
-# Ensure budget items are not null
-# and pull out parents
-$script:categories | ForEach-Object {
-  if ( $null -eq $_.Budget ) {
-     $_.Budget = 0
-  }
-}
