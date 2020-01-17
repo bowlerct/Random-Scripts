@@ -23,7 +23,9 @@ public class Category {
   }
 
   public double getCostToDate { get { return costToDate; } }
-  public double addCostToDate { set { costToDate += value; } }
+  public void addCostToDate(double cost) {
+    costToDate += cost;
+  }
 
 }
 "@
