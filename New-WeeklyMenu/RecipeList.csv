@@ -1,22 +1,18 @@
 Book,Recipe,Lunch,Ingredients
-cookinglight.com,Thai Sweet  Potato Noodles,No,Sweet Potatoes<br>tamaran<br>Coconut milk
-bulletproof.com,Zucchinni Muffins,No,Zucchinni<br>Eggs<br>Almond flour
-dietdoctor.com,Keto pizza,No,Eggs<br>Cheese<br>Tomato paste
-lowcarbmaven.com,Taco Salad,No,Chicken
-ketosummit.com,Keto Toast,No,Eggs<br>Almond flour
-maebells.com,Sausage Egg Bites,No,Sausage<br>Eggs<br>Cheese
-thrivemarket.com,Lamb Burgers w/Pistachio,No,Lamb<br>Pistachio<br>Mint
-thespruceeats.com,Lamb Curry,No,Lamb<br>Tamaran<br>Coconut milk
-web,pomegranete flank steak,No,Flank steak<br>Pomegranete juice
-web,Steak chimichurri,No,Flank steak <br>Cilantro <br>Onions
-web,Sun Dried Tomato Turkey meatballs,No,Turkey <br>Cheese <br>Sun dried tomatoes
-Giada,Turkey kale soup,No,Turkey <br>Kale <br>Rice <br>Red pepper
-web,Sun Dried Tomato chicken,No,Chicken <br>Sund dried tomoatoes
-web,Pesto Chicken,No,Chicken <br>Pesto <br>Cheese
-web,Bacon Pesto Chicken,No,Chicken <br>Bacon <br>Pesto <br>Cheese
-web,Balsamic Chicken thighs,No,Chicken thighs
-web,Buffalo Shrimp Wraps,No,Shrimp <br>Lettuce <br>Buffalo sauce
-web,Shrimp Scampi,No,Shrimp
+https://www.thedietchefs.com/keto-pizza-10-minutes-better-fathead-crust-keto-pizza,Keto pizza,no,Almond Flour<br> Coconut Flour<br> Xanthum gum<br> Protein Powder<br> Eggs<br> Garlic Powder<br> Onion Powder
+https://www.lowcarbmaven.com/healthy-low-carb-taco-salad/,Taco Salad,No,Chicken
+https://thrivemarket.com/blog/lamb-burgers-with-pistachio-pesto,Lamb Burgers w/Pistachio,No,Lamb<br>Pistachio<br>Mint
+https://www.thespruceeats.com/rogan-josh-recipe-1957574,Lamb Curry,No,Lamb<br>Tamaran<br>Coconut milk
+https://www.runningtothekitchen.com/pomegranate-flank-steak/,pomegranete flank steak,No,Flank steak<br>Pomegranete juice
+https://www.carbmanager.com/recipe/keto-chimichurri-flank-steak ,Steak chimichurri,No,Flank steak <br>Cilantro <br>Onions
+https://www.ibreatheimhungry.com/sun-dried-tomato-feta-meatballs-low-carb-gluten-free/,Sun Dried Tomato Turkey meatballs,No,Turkey <br> Feta cheese <br>Sun dried tomatoes
+Giada (book),Turkey kale soup,No,Turkey <br>Kale <br>Rice <br>Red pepper
+https://www.savorytooth.com/sun-dried-tomato-chicken/,Sun Dried Tomato chicken,No,Chicken <br>Sund dried tomoatoes
+https://www.dietdoctor.com/recipes/keto-pesto-chicken-casserole,Pesto Chicken,No,Chicken <br>Pesto <br>Cheese
+https://www.wholesomeyum.com/recipes/chicken-bacon-ranch-casserole-recipe-easy-low-carb/,Chicken Bacon-Ranch Casserole,No,Chicken <br>Bacon <br>Ranch <br>Cheese
+https://www.sugarfreemom.com/recipes/crock-pot-balsamic-chicken-thighs/,Balsamic Chicken thighs,No,Chicken thighs
+https://www.delish.com/cooking/a26331032/buffalo-shrimp-lettuce-wraps-recipe/,Buffalo Shrimp Wraps,No,Shrimp <br>Lettuce <br>Buffalo sauce
+https://ketogasm.com/keto-shrimp-scampi-recipe/,Shrimp Scampi,No,Shrimp
 Home,Steak fajitas,No,Steak <br>Peppers <br>Onions
 Home,Lamb Chilli,No,Ground lamb <br>Tomatoes <br> Tomatoe paste <br>Chillies
 Home,Pulled BBQ Beef,No,Beef roast
@@ -25,5 +21,9 @@ Home,Pulled BBQ Pork,No,Pork roast
 Home,Chicken wings,No,Chicken wings
 Home,Salmon w/lemon,No,Salmon
 Home,Salmon w/jalapeno lime,No,Salmon <br>Lime <br>Jalapeno
+Home,Almond Pecan crusted salmon,No,Salmon<br> Almond flour<br> Pecans
 Out ,Eat Out / New,No,Out
 Out ,Eat Out / New,No,Out
+https://www.eatwell101.com/lemon-garlic-butter-thighs-and-green-beans-skillet,Lemon Garlic Chicken & green beans,No,Chicken<br> Lemon<br> Garlic<br> Green Beans <br>Butter<br> Chicken Stock<br> Parsley
+https://www.wholesomeyum.com/recipes/cauliflower-mac-and-cheese-recipe-low-carb-keto-gluten-free/#pinit,Califlower Mac & Cheese,No,Califlower<br> Cheese<br> Heavy Cream<br> Butter<br> Almond milk
+https://www.tasteofhome.com/recipes/ultimate-pot-roast/,Ultimate Pot Roast,No,Chuck roast<br>Onions<br> Celery<br> Carrots<br> broth<br> Garlic<br> Tomato Paste<br> Red wine<br> Thyme<br> Parsley
