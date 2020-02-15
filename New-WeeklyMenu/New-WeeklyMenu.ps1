@@ -197,7 +197,7 @@ try{
                 }
 
                 # Change book to URL
-                if ($Day.book.ToLower() -clike 'https://*') {
+                if ($Day.book.ToLower() -clike 'https://*' -or $Day.book.ToLower() -clike 'http://*') {
                    $bookName = "<a href='{0}'><img src='https://cdn0.iconfinder.com/icons/88450/download/png/64' alt='Recipe'></a>" -f $Day.book
                 } else {
                    $bookName = $Day.book
