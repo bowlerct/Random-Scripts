@@ -195,25 +195,32 @@ try{
                 }else{
                     $LunchImg = ''
                 }
+
+                # Change book to URL
+                if ($Day.book.ToLower() -clike 'https://*') {
+                   $bookName = "<a href='{0}'><img src='https://cdn0.iconfinder.com/icons/88450/download/png/64' alt='Recipe'></a>" -f $Day.book
+                } else {
+                   $bookName = $Day.book
+                }
                 
                 switch($d){
-		    #Dont want any recipes shows for Sunday (day 6)
-		    6{ $DocumentMenu += "<td rowspan='0' style='width:1px'></td>" }
-                    default{$DocumentMenu += "<td>
-                        <div class='nested-table'>
-                            <div class='book'> "+ $Day.book + "</div>
-                            <div class='lunch'>" + $lunchImg +" </div>
-                        </div>
-                        <div class='nested-table'>
-                            <div class='recipe'>" +  $Day.Recipe + "</div>
-                        </div>
-                        </td>"
+		        #Dont want any recipes shows for Sunday (day 6)
+		        6{ $DocumentMenu += "<td rowspan='0' style='width:1px'></td>" }
+                default{
+                  $DocumentMenu += "<td>
+                    <div class='nested-table'>
+                      <div class='book'> "+ $bookName + "</div>
+                      <div class='lunch'>" + $lunchImg +" </div>
+                    </div>
+                    <div class='nested-table'>
+                      <div class='recipe'>" +  $Day.Recipe + "</div>
+                    </div>
+                    </td>"
 
                         $ShoppingList.($w) += $Day.Ingredients
-                    }
+                 }
                 }
-            }# End each day Mon-Sun
-
+           }# End each day Mon-Sun
     } #end each week
     
     $DocumentMenu += "</table>
