@@ -205,7 +205,7 @@ try{
                 
                 switch($d){
 		        #Dont want any recipes shows for Sunday (day 6)
-		        6{ $DocumentMenu += "<td rowspan='0' style='width:1px'></td>" }
+		        6{ $DocumentMenu += "<td style='width:1px'></td>" }
                 default{
                   $DocumentMenu += "<td>
                     <div class='nested-table'>
@@ -213,7 +213,14 @@ try{
                       <div class='lunch'>" + $lunchImg +" </div>
                     </div>
                     <div class='nested-table'>
-                      <div class='recipe'>" +  $Day.Recipe + "</div>
+                      <div class='recipe'>
+                       <details>
+                        <summary>" +  $Day.Recipe + "</summary>"
+                        if (-not ($Day.book.ToLower() -clike "out*") ){
+                          $DocumentMenu += "<p><i>Ingredients</i><br><span class='ingredients'>" + $Day.Ingredients + "</span></p>"
+                        }
+                       $DocumentMenu + "</details>
+                      </div>
                     </div>
                     </td>"
 
@@ -282,9 +289,8 @@ try{
     $DocumentShopList += $htmlPartStop
     $DocumentShopList | out-file $DocumentShopListPath -force
     
-
     Invoke-item $DocumentMenuPath
-    Invoke-item $DocumentShopListPath
+ #   Invoke-item $DocumentShopListPath
 
 
     #####################

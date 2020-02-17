@@ -14,13 +14,17 @@ div {font-family:Tahoma; font-size:10pt; color: #0C0B07;}
 #menu-table td {width: auto; border: 1px dotted black; padding: 5px;}
 #menu-table .rotate {white-space:nowrap; -webkit-transform: rotate(-80deg); -moz-transform: rotate(-80deg); -o-transform: rotate(-80deg);}
 #menu-table table {table-layout: auto;  border-collapse: collapse;}
-.nested-table {width: 100%; margin: auto; height:30px}
+.nested-table {width: 100%; margin: auto; min-height:30px}
 .book {float: left; font-style: italic;}
 .lunch {float: right;}
 .recipe {text-align:center; font-weight: bold;}
+.ingredients { font-weight:normal; }
 #footer p{font-family:Tahoma;font-size:8pt; font-style: italic;color: #0C0B07;}
 #footer {width:100%;float:left;}
-#browser-support {  background: ivory;  border-left: 6px skyblue solid;  font-family: courier new;  font-size: 14px;  margin: 12px 0;  padding: 6px;}	
+#browser-support {  background: ivory;  border-left: 6px skyblue solid;  font-family: courier new;  font-size: 14px;  margin: 12px 0;  padding: 6px;}
+details summary::-webkit-details-marker {
+  display:none;
+}	
 </style>
 </head>
 <body>
