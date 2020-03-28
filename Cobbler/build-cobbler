@@ -1,0 +1,103 @@
+#!/bin/sh
+
+function printHeader {
+  COLS=`tput cols`
+  # calculation for centering text
+  x=$(( ($COLS - ${#1}) / 2))
+
+  # print header
+  printf "%${COLS}s\n" " " | tr ' ' '#'
+
+  printf "%${x}s%s%${x}s\n" " " "$1" " "
+
+  # print footer
+  printf "%${COLS}s\n" " " | tr ' ' '#'
+}
+
+
+COBBLER_DIR="/home/ckoerne4/cobbler"
+MAKE=/usr/bin/make
+
+printf "Starting cobbler setup ...\n"
+
+printHeader 'Checking RPMs'
+
+
+rpms="python36-future python36-distro python36-sphinx python36-coverage \
+      python36-django python36-simplejson python36-PyYAML python36-cheetah \
+      python36-netaddr python36-requests python36-dns"
+
+# Needed for rpm builds only
+rpms="$rpms python3-devel epel-rpm-macros python36-pyflakes rpm-build"
+
+for R in $rpms
+do
+  if [ -z "`/usr/bin/rpm -qa $R`" ] ; then
+    printf "Installing rpm %s\n" $R
+    yum install -y $R
+  fi
+done
+
+#### Cobbler
+printf "\n\n"
+printHeader 'Installing Cobbler'
+cd $COBBLER_DIR
+$MAKE
+
+if [ $? == 0 ] ; then
+   printf "### making rpms\n"
+   $MAKE "rpms"
+   
+   [ $? == 0 ] && printf "success\n"
+fi
+
+
+### install cobbler
+### first we need to install python36-mod_wsgi which does not come with CentOS repo
+printHeader 'Installing Cobbler'
+
+printf "\n## installing mod_wsgi"
+pip3 install mod_wsgi
+
+# manually copy pythons mod_wsgi so over to httpd
+# LoadModule wsgi_module /usr/local/lib64/python3.6/site-packages/mod_wsgi/server/mod_wsgi-py36.cpython-36m-x86_64-linux-gnu.so
+
+pintf "\n## installing cobbler rpms"
+rpms="dnf-plugins-core python36-ldap3 python36-tornado tftp-server xorriso \
+      httpd httpd-devel mod_ssl"
+
+for R in $rpms
+do
+  if [ -z "`/usr/bin/rpm -qa $R`" ] ; then
+    printf "Installing rpm %s\n" $R
+    yum install -y $R
+  fi
+done
+
+# force install on Cent7 as they have a dependency on package (python36-mod_wsgi)
+# that is not available for Cent7. manually installed this via pip
+
+rpm -i --nodeps 'rpm-build/cobbler-3.1.2-1.el7.noarch.rpm'
+rpm -i --nodeps 'rpm-build/cobbler-web-3.1.2-1.el7.noarch.rpm'
+
+
+printf "\n ... Done\n"
+MESG=<<EOF
+
+==== Next Steps ====
+ * Update httpd to load mod_wsgi -> LoadModule wsgi_module /usr/local/lib64/python3.6/site-packages/mod_wsgi/server/mod_wsgi-py36.cpython-36m-x86_64-linux-gnu.so
+ 
+ * Remove "VirtualHost" tags from cobbler_web.conf
+
+ * Disable SELinux - vi /etc/selinux/config -> SELINUX=disabled
+
+ * Start services
+   - systemctl enable cobblerd
+   - systemctl start cobblerd
+   - systemctl enable httpd
+   - systemctl start httpd
+
+EOF
+
+printf "$MESG\n"
+
