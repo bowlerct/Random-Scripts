@@ -1,0 +1,35 @@
+{% extends "base.tmpl" %}
+{% block title %} Recipe {% endblock %}
+{% block content %}
+{% load widget_tweaks %}
+ <h2> Recipe - Recipe_Name </h2>
+{% if messages %}
+<ul class="messages">
+ {% for message in messages %}
+   <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+ {% endfor %}
+</ul>
+{% endif %}
+
+{% if error %}
+{{ error }}
+{% endif %}
+
+<form action="" method="POST">
+{% csrf_token %}
+{% include 'formtabs.tmpl' with form=form %}
+
+</form>
+
+<script>
+function cloneMore(selector, type) {
+  var total = $('#id_' + type + '-TOTAL_FORMS').val();
+  $(selector).append($('#empty_form').html().replace(/__prefix__/g, total));
+  $('#id_' + type + '-TOTAL_FORMS').val(parseInt(total) + 1);
+}
+
+$('#add_more').click(function() {
+  cloneMore('#ingred_table', 'qtyingredient_set')
+});
+</script>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "registration/login_base.html" %}
+
+{% block content %}
+<div class="container w-50">
+  <p>Logged out!</p>
+  <a href="{% url 'login'%}?next=/foodmenu/recipes">Click here to login again.</a>
+</div>
+{% endblock %}

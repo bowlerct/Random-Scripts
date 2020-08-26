@@ -1,0 +1,29 @@
+{% extends "base.tmpl" %}
+{% block title %} Recipe {% endblock %}
+{% block content %}
+{% load widget_tweaks %}
+ <h2 style="margin-bottom:2rem;"> Edit Recipe - {{ form.name.value }}</h2>
+{% if messages %}
+<ul class="messages">
+ {% for message in messages %}
+   <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+ {% endfor %}
+</ul>
+{% endif %}
+
+{% if error %}
+{{ error }}
+{% endif %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {% include 'form.tmpl' with form=form %}
+
+  {% if formset %}
+    <br/>
+    {% include 'formset-table.tmpl' with formset=formset %}
+  {% endif %}
+
+  <button type="submit" class="btn btn-outline-info">Save</button>
+</form>
+{% endblock %}

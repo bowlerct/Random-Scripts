@@ -1,0 +1,8 @@
+{% extends "base.tmpl" %}
+{% block title %} My Recipes {% endblock %}
+{% block content %}
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete recipe "{{ object }}"?</p> 
+    <button type="submit" class="btn btn-sm btn-outline-info">Confirm</button> 
+</form>
+{% endblock %}

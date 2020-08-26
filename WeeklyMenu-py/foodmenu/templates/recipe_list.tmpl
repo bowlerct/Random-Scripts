@@ -1,0 +1,25 @@
+{% extends "base.tmpl" %}
+{% block title %} My Recipes {% endblock %}
+{% block content %}
+ <h2 style="margin-bottom:2rem;"> Recipes </h2>
+ <table class="table table-hover">
+  <caption>List of recipes</caption>
+  <tr>
+   <th>Name</th>
+   <th>Cookbook</th>
+   <th>Meal</th>
+   <th>Link</th>
+   <th>Actions</th>
+  </tr>
+  {% for recipe in object_list %}
+    <tr>
+     <td>{{ recipe.name }}</td>
+     <td>{{ recipe.book }}</td>
+     <td> {{ recipe.recipeType }}</td>
+     <td>{{ recipe.url }}</td>
+     <td> <a href="{{ recipe.id }}/edit" class="btn btn-sm btn-outline-info" role="button">Edit</a>
+          <a href="{{ recipe.id }}/delete" class="btn btn-sm btn-outline-danger" role="button">Delete</a></td>
+    </tr>
+  {% endfor %}
+ </table>
+{% endblock %}

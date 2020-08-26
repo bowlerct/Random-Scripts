@@ -1,0 +1,49 @@
+{% extends "base.tmpl" %}
+{% block title %}Week Menu{% endblock %}
+{% block styles %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static "menu.css" %}">
+{% endblock %}
+{% block content %}
+<div id='parent'>
+<div id='menu-table'>
+ <table>
+  <tr>
+   <th>Sunday</th> 
+   <th>Monday</th>
+   <th>Tuesday</th>
+   <th>Wednesday</th>
+   <th>Thursday</th>
+   <th>Friday</th>
+   <th>Saturday</th>
+  </tr>
+
+  {% for day, recipe in foods.items|dictsort:0 %}
+  <td>
+  <div class='nested-table'>
+   <div class='book'>
+    {% if recipe.url %}
+      <a href="{{ recipe.url }}"> <img src='https://cdn0.iconfinder.com/icons/88450/download/png/64' alt='Recipe'></a>
+    {% endif %}
+   </div>
+   <div class='lunch'> {{ recipe.book }} </div>
+  </div>
+  <div class='nested-table'>
+   <div class='recipe'>
+    <details>
+     <summary>{{ recipe.name }}</summary>
+     <p><i>Ingredients</i><br><span class='ingredients'>
+     {% for i in recipe.ingredients %}
+       {{ i }}<br>
+     {% endfor %}
+     </span></p>
+    </details>
+   </div>
+  </div>
+  </td>
+{% endfor %}
+  </tr>
+ </table>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.tmpl" %}
+{% block title %} My Recipes {% endblock %}
+{% block content %}
+ <h2 style="margin-bottom:2rem;"> New Recipe </h2>
+
+ <form action="" method="post">
+   {% csrf_token %}
+   {% include 'form.tmpl' with form=form %}
+   <br/>
+   <button type="submit" class="btn btn-outline-info">Save</button>
+ </form>
+{% endblock %}

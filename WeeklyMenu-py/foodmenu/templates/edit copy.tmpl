@@ -1,0 +1,90 @@
+{% extends "base.tmpl" %}
+{% block title %} Recipe {% endblock %}
+{% block content %}
+{% load widget_tweaks %}
+ <h2> Edit Recipe </h2>
+{% if messages %}
+<ul class="messages">
+ {% for message in messages %}
+   <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+ {% endfor %}
+</ul>
+{% endif %}
+
+{% if error %}
+{{ error }}
+{% endif %}
+
+<form action="" method="POST">
+{% csrf_token %}
+{% include 'form.tmpl' with form=form %}
+
+{% if formset %}
+  {% formset %}
+{% endif %}
+
+<h5>Ingredients</h5>
+{{ ingredients.management_form }}
+<table class="table">
+ <tbody id="ingred_table">
+  <tr>
+    <th>Quantity</th>
+    <th>Size</th>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  {% for form in ingredients %}
+  <tr>
+    {% for field in form.visible_fields %}
+        {% if field.name == "DELETE" %}
+        <td>Delete {% render_field field class="form-check-inline checkbox-lg" %}
+        {% for hidden_field in form.hidden_fields %}
+          {{ hidden_field }}
+        {% endfor %}
+        </td>
+        {% else %}
+        <td>{% render_field field class="form-control form-control-sm" %}</td>
+        {% endif %}
+      {% endfor %}
+  </tr>
+  {% endfor %}
+ </tbody>
+ <caption><input type="button" class="btn btn-sm btn-outline-success" id="add_more" value="Add Ingredient" /></caption>
+</table>
+<button type="submit" class="btn btn-outline-info">Save</button>
+
+<div style="display:none">
+  <table>
+   <tbody id="empty_form">
+    {% with ingredients.empty_form as form %}
+     <tr>
+      {% for field in form.visible_fields %}
+        {% if field.name == "DELETE" %}
+        <td>Delete {% render_field field class="form-check-inline checkbox-lg" %}
+        {% for hidden_field in form.hidden_fields %}
+          {{ hidden_field }}
+        {% endfor %}
+        </td>
+        {% else %}
+        <td>{% render_field field class="form-control form-control-sm" %}</td>
+        {% endif %}
+      {% endfor %}
+     </tr>
+     {% endwith %}
+   </tbody>
+  </table>
+</div>
+</form>
+
+<script>
+function cloneMore(selector, type) {
+  var total = $('#id_' + type + '-TOTAL_FORMS').val();
+  $(selector).append($('#empty_form').html().replace(/__prefix__/g, total));
+  $('#id_' + type + '-TOTAL_FORMS').val(parseInt(total) + 1);
+}
+
+$('#add_more').click(function() {
+  cloneMore('#ingred_table', 'qtyingredient_set')
+});
+</script>
+{% endblock %}

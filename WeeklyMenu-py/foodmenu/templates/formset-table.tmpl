@@ -1,0 +1,75 @@
+{% load widget_tweaks %}
+
+{{ formset.management_form }}
+{% if formset_title %}
+ <h5>{{ formset_title }}</h5>
+{% endif %}
+
+<table class="table">
+    <tbody id="formset_table">
+     {% for form in formset %}
+      {% if forloop.first %}
+      <tr>
+       {% for field in form.visible_fields %}
+         {% if field.name == "DELETE" %}
+         <th></th>
+         {% else %}
+         <th>{{ field.label }}</th>
+         {% endif %}
+       {% endfor %}
+      </tr>
+      {% endif %}
+     <tr>
+     {% for field in form.visible_fields %}
+        {% if field.name == "DELETE" %}
+        <td>Delete {% render_field field class="form-check-inline checkbox-lg" %}
+        </td>
+        {% else %}
+        <td>{% render_field field class="form-control form-control-sm" %}</td>
+        {% endif %}
+     {% endfor %}
+      <td style="display:none;">
+        {% for hidden_field in form.hidden_fields %}
+          {{ hidden_field }}
+        {% endfor %}
+      </td>
+     </tr>
+     {% endfor %}
+    </tbody>
+    <caption class="text-right"><input type="button" class="btn btn-sm btn-outline-success" id="add_more" value="Add Ingredient" /></caption>
+</table>
+
+<div style="display:none">
+  <table>
+   <tbody id="empty_form">
+    {% with formset.empty_form as form %}
+     <tr>
+      {% for field in form.visible_fields %}
+        {% if field.name == "DELETE" %}
+        <td>Delete {% render_field field class="form-check-inline checkbox-lg" %}</td>
+        {% else %}
+        <td>{% render_field field class="form-control form-control-sm" %}</td>
+        {% endif %}
+      {% endfor %}
+      <td style="display:none;">
+        {% for hidden_field in form.hidden_fields %}
+          {{ hidden_field }}
+        {% endfor %}
+      </td>
+     </tr>
+     {% endwith %}
+   </tbody>
+  </table>
+</div>
+
+<script>
+function cloneMore(selector, type) {
+  var total = $('#id_' + type + '-TOTAL_FORMS').val();
+  $(selector).append($('#empty_form').html().replace(/__prefix__/g, total));
+  $('#id_' + type + '-TOTAL_FORMS').val(parseInt(total) + 1);
+}
+
+$('#add_more').click(function() {
+  cloneMore('#formset_table', 'qtyingredient_set')
+});
+</script>
