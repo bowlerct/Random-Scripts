@@ -1,13 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
-       return self.name
+        return self.name
+
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
@@ -15,8 +15,8 @@ class Recipe(models.Model):
     url = models.URLField(max_length=250, verbose_name="Link", blank=True)
     RECIPE_TYPE_CHOICES = [
         ('Breakfast', 'Breakfast'),
-        ('Lunch','Lunch'),
-        ('Dinner','Dinner')
+        ('Lunch', 'Lunch'),
+        ('Dinner', 'Dinner')
     ]
     recipeType = models.CharField(
         max_length=15,
@@ -32,18 +32,19 @@ class Recipe(models.Model):
     def __str__(self):
         return self.name
 
+
 class QtyIngredient(models.Model):
     name = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=1) # 1, 1/4, 1/2, etc
+    quantity = models.IntegerField(default=1)  # 1, 1/4, 1/2, etc
     SIZE_TYPE_CHOICES = [
-       ('TSP','Teaspoon'),
-       ('TBSP','Tablespoon'),
+       ('TSP', 'Teaspoon'),
+       ('TBSP', 'Tablespoon'),
        ('CUP', 'Cup'),
-       ('PINT','Pint'),
-       ('QUART','Quart'),
-       ('GALLON','Gallon'),
-       ('LITER','Liter'),
+       ('PINT', 'Pint'),
+       ('QUART Quart'),
+       ('GALLON', 'Gallon'),
+       ('LITER', 'Liter'),
        ('BUNCH', 'Bunch')
     ]
     size = models.CharField(
@@ -54,4 +55,4 @@ class QtyIngredient(models.Model):
     )
 
     def __str__(self):
-        return "{} {} {}".format(self.quantity,self.size,self.name)
+        return "{} {} {}".format(self.quantity, self.size, self.name)
