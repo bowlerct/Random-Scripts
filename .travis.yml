@@ -16,11 +16,11 @@ jobs:
       name: "Linter"
       script:
         - pip3 install pyflakes pycodestyle
-        - pyflakes WeeklyMenu/foodmenu/*.py
-        - pycodestyle -r --ignore E501,E402,E722,W504 WeeklyMenu/foodmenu/*.py
+        - pyflakes WeeklyMenu-py/foodmenu/*.py
+        - pycodestyle -r --ignore E501,E402,E722,W504 WeeklyMenu-py/foodmenu/*.py
     - stage: testing
       name: "Run unit tests"
       script:
         - pip3 install pytest pytest-cov
         - COMMIT_SHA=`git rev-parse HEAD`
-        - pytest --cov=./WeeklyMenu/foodmenu"
+        - pytest --cov=./WeeklyMenu-py/foodmenu"
