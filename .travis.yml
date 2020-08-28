@@ -17,10 +17,11 @@ jobs:
       script:
         - pip3 install pyflakes pycodestyle
         - pyflakes WeeklyMenu-py/foodmenu/*.py
-        - pycodestyle -r --ignore E501,E402,E722,W504 WeeklyMenu-py/foodmenu/*.py
+        - pycodestyle -r --ignore E501 WeeklyMenu-py/foodmenu/*.py
     - stage: testing
       name: "Run unit tests"
       script:
-        - pip3 install django pytest pytest-cov pytest-django
+        - pip3 install Django==2.2.13
+        - pip3 install pytest pytest-cov pytest-django
         - COMMIT_SHA=`git rev-parse HEAD`
         - pytest --cov=./WeeklyMenu-py/foodmenu
