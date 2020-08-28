@@ -21,6 +21,6 @@ jobs:
     - stage: testing
       name: "Run unit tests"
       script:
-        - pip3 install pytest pytest-cov pytest-django
+        - pip3 install django pytest pytest-cov pytest-django
         - COMMIT_SHA=`git rev-parse HEAD`
         - pytest --cov=./WeeklyMenu-py/foodmenu
