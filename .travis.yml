@@ -16,8 +16,8 @@ jobs:
       name: "Linter"
       script:
         - pip3 install pyflakes pycodestyle
-        - pyflakes *.py WeeklyMenu/foodmenu/*.py
-        - pycodestyle -r --ignore E501,E402,E722,W504 *.py WeeklyMenu/foodmenu/*.py
+        - pyflakes WeeklyMenu/foodmenu/*.py
+        - pycodestyle -r --ignore E501,E402,E722,W504 WeeklyMenu/foodmenu/*.py
     - stage: testing
       name: "Run unit tests"
       script:
