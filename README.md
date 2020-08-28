@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/bowlerct/Random-Scripts.svg)](https://travis-ci.org/bowlerct/Random-Scripts)
 # Random-Scripts
 Random script of mainly powershell
 
