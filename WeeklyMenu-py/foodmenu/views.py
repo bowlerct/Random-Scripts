@@ -16,44 +16,46 @@ def index(request):
     today = datetime.datetime.now().date()
     return render(request, "home.tmpl", {"today": today})
 
+
 def createMenu():
     foods = {}
     recipes = Recipe.objects.all()
-    if recipes.count() < 7 :
-      # We need all recipes and blank objects to fill one full week
-      dayCount = 0
-      rndrecipes = {}
-      while dayCount < recipes.count():
-        rndrecipes[dayCount] = recipes[dayCount]
-        dayCount += 1
-      while dayCount < 7:
-        rndrecipes[dayCount] = dayCount
-        dayCount += 1
-      random.shuffle(rndrecipes)
+    if recipes.count() < 7:
+        # We need all recipes and blank objects to fill one full week
+        dayCount = 0
+        rndrecipes = {}
+        while dayCount < recipes.count():
+            rndrecipes[dayCount] = recipes[dayCount]
+            dayCount += 1
+        while dayCount < 7:
+            rndrecipes[dayCount] = dayCount
+            dayCount += 1
+        random.shuffle(rndrecipes)
     else:
-      rndrecipes = random.sample(recipes,k=7)
+        rndrecipes = random.sample(recipes, k=7)
 
     # now build the foods object
     for i in range(7):
-      ingredients = []
-      if isinstance(rndrecipes[i], Recipe):
-        for ing in rndrecipes[i].ingredients.all():
-          ingredients.append(ing.name)
-        foods[i] = {
-          'name': rndrecipes[i].name,
-          'book': rndrecipes[i].book,
-          'url': rndrecipes[i].url,
-          'ingredients': ingredients
-        }
-      else:
-        foods[i] = {
-          'name': 'Eat Out',
-          'book': '',
-          'url': '',
-          'ingredients': ingredients
-        }
-    
+        ingredients = []
+        if isinstance(rndrecipes[i], Recipe):
+            for ing in rndrecipes[i].ingredients.all():
+                ingredients.append(ing.name)
+            foods[i] = {
+                'name': rndrecipes[i].name,
+                'book': rndrecipes[i].book,
+                'url': rndrecipes[i].url,
+                'ingredients': ingredients
+            }
+        else:
+            foods[i] = {
+                'name': 'Eat Out',
+                'book': '',
+                'url': '',
+                'ingredients': ingredients
+            }
+
     return foods
+
 
 @login_required
 def menu(request):
@@ -69,7 +71,8 @@ def menu(request):
     Need to give option to regenerate or create new menu if a current menu exists as this will
     overwrite any current menu
     """
-    return render(request, 'menu.tmpl', { 'foods': foods })
+    return render(request, 'menu.tmpl', {'foods': foods})
+
 
 @login_required
 def editrecipe(request, pk):
@@ -79,18 +82,19 @@ def editrecipe(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk)
     form = CreateRecipe(request.POST or None, instance=recipe)
     formset = IngredientsFormset(request.POST or None, instance=recipe)
-    context = {'form': form, 'formset_title': 'Ingredients' }
+    context = {'form': form, 'formset_title': 'Ingredients'}
 
     if request.method == 'POST':
-      if form.is_valid() and formset.is_valid():
-          form.save()
-          formset.save()
-          messages.success(request,"Save successful")
-          context['formset'] = IngredientsFormset(instance=recipe)
-          return render(request,'edit.tmpl', context)
+        if form.is_valid() and formset.is_valid():
+            form.save()
+            formset.save()
+            messages.success(request, "Save successful")
+            context['formset'] = IngredientsFormset(instance=recipe)
+            return render(request, 'edit.tmpl', context)
 
     context['formset'] = formset
-    return render(request,'edit.tmpl', context)
+    return render(request, 'edit.tmpl', context)
+
 
 @login_required
 def editformset(request, pk):
@@ -102,15 +106,16 @@ def editformset(request, pk):
     formset = IngredientsFormset(request.POST or None, instance=recipe)
 
     if request.method == 'POST':
-       if form.is_valid() and formset.is_valid():
-          form.save()
-          formset.save()
-          messages.success(request,"Save successful")
-          context = {'form': form, 'formset': IngredientsFormset(instance=recipe)}
-          return render(request,'formset.tmpl', context)
-      
+        if form.is_valid() and formset.is_valid():
+            form.save()
+            formset.save()
+            messages.success(request, "Save successful")
+            context = {'form': form, 'formset': IngredientsFormset(instance=recipe)}
+            return render(request, 'formset.tmpl', context)
+
     context = {'form': form, 'formset': formset}
-    return render(request,'formset.tmpl', context)
+    return render(request, 'formset.tmpl', context)
+
 
 class RecipeList(LoginRequiredMixin, ListView):
     model = Recipe
@@ -125,6 +130,7 @@ class RecipeList(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Recipe.objects.filter(owner=self.request.user).order_by('name')
 
+
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     form_class = CreateRecipe
     template_name = "recipe_create.tmpl"
@@ -133,9 +139,9 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
         context = super().get_context_data(**kwargs)
         context['newactive'] = "active"
         if self.request.POST:
-           context["ingredients"] = IngredientsFormset(self.request.POST)
+            context["ingredients"] = IngredientsFormset(self.request.POST)
         else:
-           context["ingredients"] = IngredientsFormset()
+            context["ingredients"] = IngredientsFormset()
         return context
 
     def get_success_url(self, **kwargs):
@@ -146,12 +152,12 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 #        form.instance.owner = self.request.user
 #        return super().form_valid(form)
 
+
 class RecipeDeleteView(LoginRequiredMixin, DeleteView):
-  # use permissions to restrict access to delete
-  # https://stackoverflow.com/questions/43496708/view-list-of-only-current-user-objects-django-rest
+    # use permissions to restrict access to delete
+    # https://stackoverflow.com/questions/43496708/view-list-of-only-current-user-objects-django-rest
     model = Recipe
     template_name = "confirm_delete.tmpl"
 
     def get_success_url(self, **kwargs):
         return reverse_lazy('listview')
-       

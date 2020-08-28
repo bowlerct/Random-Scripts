@@ -9,14 +9,14 @@ class CreateRecipe(forms.ModelForm):
         self.label_suffix = ''
 
     class Meta:
-        model=Recipe
-        fields=['name', 'book', 'url', 'recipeType']
+        model = Recipe
+        fields = ['name', 'book', 'url', 'recipeType']
 
 
 class EditRecipeForm(forms.ModelForm):
     class Meta:
-        model=QtyIngredient
-        fields=['quantity', 'size', 'name']
+        model = QtyIngredient
+        fields = ['quantity', 'size', 'name']
 
 
 IngredientsFormset = inlineformset_factory(Recipe, Recipe.ingredients.through, form=EditRecipeForm, extra=1)

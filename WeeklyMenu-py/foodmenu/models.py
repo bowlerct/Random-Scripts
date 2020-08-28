@@ -38,14 +38,14 @@ class QtyIngredient(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)  # 1, 1/4, 1/2, etc
     SIZE_TYPE_CHOICES = [
-       ('TSP', 'Teaspoon'),
-       ('TBSP', 'Tablespoon'),
-       ('CUP', 'Cup'),
-       ('PINT', 'Pint'),
-       ('QUART Quart'),
-       ('GALLON', 'Gallon'),
-       ('LITER', 'Liter'),
-       ('BUNCH', 'Bunch')
+        ('TSP', 'Teaspoon'),
+        ('TBSP', 'Tablespoon'),
+        ('CUP', 'Cup'),
+        ('PINT', 'Pint'),
+        ('QUART Quart'),
+        ('GALLON', 'Gallon'),
+        ('LITER', 'Liter'),
+        ('BUNCH', 'Bunch')
     ]
     size = models.CharField(
         max_length=15,
