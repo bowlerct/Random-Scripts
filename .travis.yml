@@ -26,4 +26,5 @@ jobs:
         - pip3 install pytest pytest-cov pytest-django
         - COMMIT_SHA=`git rev-parse HEAD`
         - cd WeeklyMenu-py
+        - python3 manage.py makemigrations
         - pytest --cov=./foodmenu
