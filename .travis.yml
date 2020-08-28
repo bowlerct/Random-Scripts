@@ -23,4 +23,4 @@ jobs:
       script:
         - pip3 install pytest pytest-cov
         - COMMIT_SHA=`git rev-parse HEAD`
-        - pytest --cov=./WeeklyMenu-py/foodmenu"
+        - pytest --cov=./WeeklyMenu-py/foodmenu
