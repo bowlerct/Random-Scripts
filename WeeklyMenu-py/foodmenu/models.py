@@ -42,7 +42,7 @@ class QtyIngredient(models.Model):
         ('TBSP', 'Tablespoon'),
         ('CUP', 'Cup'),
         ('PINT', 'Pint'),
-        ('QUART Quart'),
+        ('QUART', 'Quart'),
         ('GALLON', 'Gallon'),
         ('LITER', 'Liter'),
         ('BUNCH', 'Bunch')
