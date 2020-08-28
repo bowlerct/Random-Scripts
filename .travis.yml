@@ -25,4 +25,5 @@ jobs:
         - pip3 install django-widget-tweaks==1.4.8
         - pip3 install pytest pytest-cov pytest-django
         - COMMIT_SHA=`git rev-parse HEAD`
-        - pytest --cov=./WeeklyMenu-py/foodmenu
+        - cd WeeklyMenu-py
+        - pytest --cov=./foodmenu
