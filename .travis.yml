@@ -22,6 +22,7 @@ jobs:
       name: "Run unit tests"
       script:
         - pip3 install Django==2.2.13
+        - pip3 install django-widget-tweaks==1.4.8
         - pip3 install pytest pytest-cov pytest-django
         - COMMIT_SHA=`git rev-parse HEAD`
         - pytest --cov=./WeeklyMenu-py/foodmenu
