@@ -71,7 +71,7 @@ def menu(request):
     Need to give option to regenerate or create new menu if a current menu exists as this will
     overwrite any current menu
     """
-    return render(request, 'menu.tmpl', {'foods': foods})
+    return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True })
 
 
 @login_required
@@ -147,10 +147,10 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     def get_success_url(self, **kwargs):
         return reverse_lazy('listview')
 
-# use the recipe_create.tmpl then this won't be needed
-#    def form_valid(self, form):
-#        form.instance.owner = self.request.user
-#        return super().form_valid(form)
+    # Can also use the recipe_create.tmpl then this won't be needed
+    def form_valid(self, form):
+       form.instance.owner = self.request.user
+       return super().form_valid(form)
 
 
 class RecipeDeleteView(LoginRequiredMixin, DeleteView):
