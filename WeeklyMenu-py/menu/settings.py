@@ -27,9 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '192.168.50.173',
-    'thekoerners.asuscomm.com'
+    'thekoerners.asuscomm.com',
+    '*'
 ]
-
 
 # Application definition
 
