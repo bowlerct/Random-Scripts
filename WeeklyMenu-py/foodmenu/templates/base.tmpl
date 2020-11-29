@@ -39,16 +39,9 @@
     <a class="navbar-brand" href="">Recipe Planner</a>
 	 <div class="collapse navbar-collapse" id="navbarMenu">
 	  <ul class="navbar-nav mr-auto">
-	  {% if homeactive %}
-	   <li class="nav-item active"><a class="nav-link" href="recipes">Home</a></li>
-	  {% else %}
-	    <li class="nav-item"><a class="nav-link" href="recipes">Home</a></li>
-	  {% endif %}
-	  {% if newactive %}
-	    <li class="nav-item active"><a class="nav-link" href="newrecipe">New</a></li>
-	  {% else %}
-	    <li class="nav-item"><a class="nav-link" href="newrecipe">New</a></li>
-	  {% endif %}
+    <li class="nav-item {% if homeactive %} active {% endif %}"><a class="nav-link" href="recipes">Home</a></li>
+    <li class="nav-item {% if newactive %} active {% endif %}"><a class="nav-link" href="newrecipe">New</a></li>
+    <li class="nav-item {% if menuactive %} active {% endif %}"><a class="nav-link" href="menu">Menu</a></li>
 	  </ul>
       <div class="dropdown">
       {% if user.is_authenticated %}
