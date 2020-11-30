@@ -71,7 +71,7 @@ def menu(request):
         # get first one
         foods = json.loads(rec[0].foods)
         date = rec[0].date
-        return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True, "menudate": date })
+        return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True, "menudate": date})
 
     # Create menu and show it
     foods = createMenu()
@@ -79,7 +79,7 @@ def menu(request):
     newmenu.save()
     date = newmenu.date
 
-    return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True, "menudate": date })
+    return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True, "menudate": date})
 
 
 @login_required
@@ -163,8 +163,8 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 
     # Can also use the recipe_create.tmpl then this won't be needed
     def form_valid(self, form):
-       form.instance.owner = self.request.user
-       return super().form_valid(form)
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
 
 
 class RecipeDeleteView(LoginRequiredMixin, DeleteView):
