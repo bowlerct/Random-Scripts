@@ -2,10 +2,12 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView
-from foodmenu.models import Recipe
+from django.core.exceptions import PermissionDenied
+from foodmenu.models import Recipe, RecipeMenu
 from foodmenu.forms import CreateRecipe, IngredientsFormset
 import datetime
 import random
+import json
 
 # authentication
 from django.contrib.auth.decorators import login_required
@@ -60,18 +62,24 @@ def createMenu():
 @login_required
 def menu(request):
     """
-    TODO
-    Check if database has a menu. If so display it, otherwise create new menu
+    Shows a list of menus
     """
-    foods = createMenu()
 
-    """
-    TODO
-    now save the foods dictionary to the database for the current week beginning on Sun
-    Need to give option to regenerate or create new menu if a current menu exists as this will
-    overwrite any current menu
-    """
-    return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True })
+    # Check if database has a menu, if so display it.
+    rec = RecipeMenu.objects.filter(owner=request.user)
+    if rec.count() > 0:
+        # get first one
+        foods = json.loads(rec[0].foods)
+        date = rec[0].date
+        return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True, "menudate": date })
+
+    # Create menu and show it
+    foods = createMenu()
+    newmenu = RecipeMenu(foods=json.dumps(foods), owner=request.user)
+    newmenu.save()
+    date = newmenu.date
+
+    return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True, "menudate": date })
 
 
 @login_required
@@ -80,6 +88,9 @@ def editrecipe(request, pk):
     Edit a recipe and its ingredients
     """
     recipe = get_object_or_404(Recipe, pk=pk)
+    if recipe.owner != request.user:
+        raise PermissionDenied
+
     form = CreateRecipe(request.POST or None, instance=recipe)
     formset = IngredientsFormset(request.POST or None, instance=recipe)
     context = {'form': form, 'formset_title': 'Ingredients'}
@@ -102,6 +113,9 @@ def editformset(request, pk):
     This is a second form that displays recipe details in tabs.
     """
     recipe = get_object_or_404(Recipe, pk=pk)
+     if recipe.owner != request.user:
+        raise PermissionDenied
+
     form = CreateRecipe(request.POST or None, instance=recipe)
     formset = IngredientsFormset(request.POST or None, instance=recipe)
 
