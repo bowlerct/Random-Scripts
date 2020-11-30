@@ -29,6 +29,10 @@
   width: 1.85rem;
   height: 1.85rem;
 }
+.div-action-hd {
+  float: right;
+  padding: 0rem 0rem 1rem 0rem;
+}
  </style>
  {% endblock %}
 </head>
@@ -40,8 +44,7 @@
 	 <div class="collapse navbar-collapse" id="navbarMenu">
 	  <ul class="navbar-nav mr-auto">
     <li class="nav-item {% if homeactive %} active {% endif %}"><a class="nav-link" href="recipes">Home</a></li>
-    <li class="nav-item {% if newactive %} active {% endif %}"><a class="nav-link" href="newrecipe">New</a></li>
-    <li class="nav-item {% if menuactive %} active {% endif %}"><a class="nav-link" href="menu">Menu</a></li>
+    <li class="nav-item {% if menuactive %} active {% endif %}"><a class="nav-link" href="menu">Menus</a></li>
 	  </ul>
       <div class="dropdown">
       {% if user.is_authenticated %}

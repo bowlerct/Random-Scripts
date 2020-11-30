@@ -1,0 +1,24 @@
+{% extends "base.tmpl" %}
+{% block title %} My Menus {% endblock %}
+{% block content %}
+ <h2 style="margin-bottom:2rem;"> Menus </h2>
+ <div class="div-action-hd">
+  <a href="menus/new" class="btn btn-sm btn-outline-info" role="button">New Menu</a>
+ </div>
+ <table class="table table-hover">
+  <caption>List of weekly menus</caption>
+  <tbody>
+  <tr>
+   <th>Week of</th>
+   <th>Actions</th>
+  </tr>
+  {% for menu in object_list %}
+    <tr>
+     <td>{{ menu.date }}</td>
+     <td> <a href="menus/view/{{ menu.id }}" class="btn btn-sm btn-outline-info" role="button">View</a>
+          <a href="menus/delete/{{ menu.id }}" class="btn btn-sm btn-outline-danger" role="button">Delete</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+ </table>
+{% endblock %}

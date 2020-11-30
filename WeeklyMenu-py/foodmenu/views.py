@@ -151,7 +151,6 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['newactive'] = "active"
         if self.request.POST:
             context["ingredients"] = IngredientsFormset(self.request.POST)
         else:
@@ -182,3 +181,17 @@ class RecipeDeleteView(LoginRequiredMixin, DeleteView):
             raise PermissionDenied
         # we use get instead of post to get a confirmation
         return super().get(request, *args, **kwargs)
+
+
+class RecipeMenuList(LoginRequiredMixin, ListView):
+    model = RecipeMenu
+    # override the default {app}.{model_viewtype}.tmpl which is foodmenu.recipe_list.tmpl
+    template_name = "recipemenu_list.tmpl"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['menuactive'] = "active"
+        return context
+
+    def get_queryset(self):
+        return RecipeMenu.objects.filter(owner=self.request.user).order_by('date')
