@@ -175,3 +175,10 @@ class RecipeDeleteView(LoginRequiredMixin, DeleteView):
 
     def get_success_url(self, **kwargs):
         return reverse_lazy('listview')
+    
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.object.owner != self.request.user:
+            raise PermissionDenied
+        # we use get instead of post to get a confirmation
+        return super().get(request, *args, **kwargs)
