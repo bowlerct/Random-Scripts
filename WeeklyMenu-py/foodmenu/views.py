@@ -113,7 +113,7 @@ def editformset(request, pk):
     This is a second form that displays recipe details in tabs.
     """
     recipe = get_object_or_404(Recipe, pk=pk)
-     if recipe.owner != request.user:
+    if recipe.owner != request.user:
         raise PermissionDenied
 
     form = CreateRecipe(request.POST or None, instance=recipe)
