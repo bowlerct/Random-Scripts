@@ -20,5 +20,10 @@
     </tr>
   {% endfor %}
   </tbody>
+  <tfoot>
+    {% if object_list.count > 0 %}
+      {% include 'paginate.tmpl' %}
+    {% endif %}
+  </tfoot>
  </table>
 {% endblock %}

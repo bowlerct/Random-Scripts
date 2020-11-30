@@ -29,6 +29,9 @@ class Recipe(models.Model):
     # don't keep the recipe's if the user is removed
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ['name']
+
     def __str__(self):
         return self.name
 

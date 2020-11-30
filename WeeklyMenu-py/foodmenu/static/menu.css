@@ -6,7 +6,8 @@ div {font-family:Tahoma; font-size:10pt; color: #0C0B07;}
 #footer p{font-family:Tahoma;font-size:8pt; font-style: italic;color: #0C0B07;}
 #footer {width:100%;float:left;}
 */
-#parent {padding-top: 10rem; height:90%;text-align: center; display: table; width: 100%;}
+#menudate {padding-top: 8rem; text-align: center; width: 100%; font-weight: bold;}
+#parent {height: 90%; text-align: center; display: table; width: 100%;}
 #menu-table {display: table-cell; text-align: center; vertical-align: middle;} 
 #menu-table table {width: 100%; table-layout: auto;  border-collapse: collapse; padding-left: 2}
 #menu-table table tr:not(:first-child) th {display: inline-block;  -webkit-writing-mode: vertical-rl;  -ms-writing-mode: tb-rl;  writing-mode: vertical-rl;}

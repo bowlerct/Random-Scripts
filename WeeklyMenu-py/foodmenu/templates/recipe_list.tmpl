@@ -24,5 +24,10 @@
           <a href="recipes/delete/{{ recipe.id }}" class="btn btn-sm btn-outline-danger" role="button">Delete</a></td>
     </tr>
   {% endfor %}
+  <tfoot>
+    {% if object_list.count > 0 %}
+      {% include 'paginate.tmpl' %}
+    {% endif %}
+  </tfoot>
  </table>
 {% endblock %}

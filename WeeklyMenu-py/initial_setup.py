@@ -30,8 +30,18 @@ if __name__ == '__main__':
 
     from foodmenu.models import Ingredient, Recipe, QtyIngredient
 
-    newIngreds = ['carrots','celery', 'broccolli', 'chicken broth']
+    newIngreds = ['carrots','celery','broccolli','chicken broth']
 
     for entry in newIngreds:
         newIngredient(entry)
 
+    # create admin user
+    local_user = User.objects.filter(username='menuadmin')
+
+    if local_user.count() == 1:
+        local_user = local_user[0]
+    else:
+        local_user = User(first_name="Menu", last_name="Admin", email='', username='menuadmin')
+        local_user.set_password("#####")
+        local_user.save()
+        print("Created admin {}".format(local_user.username))

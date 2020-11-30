@@ -19,9 +19,12 @@ def index(request):
     return render(request, "home.tmpl", {"today": today})
 
 
-def createMenu():
+def createMenu(user, rtype=None):
     foods = {}
-    recipes = Recipe.objects.all()
+    if rtype:
+        recipes = Recipe.objects.filter(owner=user).filter(recipeType=rtype)
+    else:
+        recipes = Recipe.objects.filter(owner=user)
     if recipes.count() < 7:
         # We need all recipes and blank objects to fill one full week
         dayCount = 0
@@ -34,7 +37,9 @@ def createMenu():
             dayCount += 1
         random.shuffle(rndrecipes)
     else:
-        rndrecipes = random.sample(recipes, k=7)
+        rids = [r.id for r in recipes]
+        rndrids = random.sample(rids, k=7)
+        rndrecipes = Recipe.objects.filter(id__in=rndrids)
 
     # now build the foods object
     for i in range(7):
@@ -132,6 +137,7 @@ class RecipeList(LoginRequiredMixin, ListView):
     model = Recipe
     # override the default {app}.{model_viewtype}.tmpl which is foodmenu.recipe_list.tmpl
     template_name = "recipe_list.tmpl"
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -139,7 +145,14 @@ class RecipeList(LoginRequiredMixin, ListView):
         return context
 
     def get_queryset(self):
-        return Recipe.objects.filter(owner=self.request.user).order_by('name')
+        order_by = self.request.GET.get('order', None)
+        ftype = self.request.GET.get('ft', None)  # recipeType options
+        recs = Recipe.objects.filter(owner=self.request.user)
+        if ftype:
+            recs = recs.filter(recipeType=ftype)
+        if order_by:
+            recs = recs.order_by(order_by)
+        return recs
 
 
 class RecipeCreateView(LoginRequiredMixin, CreateView):
@@ -184,6 +197,7 @@ class RecipeMenuList(LoginRequiredMixin, ListView):
     model = RecipeMenu
     # override the default {app}.{model_viewtype}.tmpl which is foodmenu.recipe_list.tmpl
     template_name = "recipemenu_list.tmpl"
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -203,7 +217,8 @@ class MenuCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
-        form.instance.foods = json.dumps(createMenu())
+        # FIXME allow user to select meal types
+        form.instance.foods = json.dumps(createMenu(self.request.user, "Dinner"))
         return super().form_valid(form)
 
 
