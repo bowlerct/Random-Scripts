@@ -20,8 +20,8 @@
      <td>{{ recipe.book }}</td>
      <td> {{ recipe.recipeType }}</td>
      <td>{{ recipe.url }}</td>
-     <td> <a href="{{ recipe.id }}/edit" class="btn btn-sm btn-outline-info" role="button">Edit</a>
-          <a href="{{ recipe.id }}/delete" class="btn btn-sm btn-outline-danger" role="button">Delete</a></td>
+     <td> <a href="recipes/edit/{{ recipe.id }}" class="btn btn-sm btn-outline-info" role="button">Edit</a>
+          <a href="recipes/delete/{{ recipe.id }}" class="btn btn-sm btn-outline-danger" role="button">Delete</a></td>
     </tr>
   {% endfor %}
  </table>

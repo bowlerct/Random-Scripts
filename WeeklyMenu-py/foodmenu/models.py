@@ -59,13 +59,13 @@ class QtyIngredient(models.Model):
 
 
 class RecipeMenu(models.Model):
-    date = models.DateField(auto_now_add=True)
+    date = models.DateField(help_text="mm/dd/yy")
     foods = models.TextField()
     # don't keep the menus if the user is removed
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ['date']
+        ordering = ['-date']
 
     def __str__(self):
         return "{} {}".format("RecipeMenu", self.date)

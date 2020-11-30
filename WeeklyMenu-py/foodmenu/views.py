@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView
 from django.core.exceptions import PermissionDenied
 from foodmenu.models import Recipe, RecipeMenu
-from foodmenu.forms import CreateRecipe, IngredientsFormset
+from foodmenu.forms import CreateRecipe, IngredientsFormset, CreateMenu
 import datetime
 import random
 import json
@@ -60,26 +60,23 @@ def createMenu():
 
 
 @login_required
-def menu(request):
+def menuView(request, pk):
     """
-    Shows a list of menus
+    Shows selected menu
     """
 
-    # Check if database has a menu, if so display it.
-    rec = RecipeMenu.objects.filter(owner=request.user)
-    if rec.count() > 0:
-        # get first one
-        foods = json.loads(rec[0].foods)
-        date = rec[0].date
-        return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True, "menudate": date})
+    # # Create menu and show it
+    # foods = createMenu()
+    # newmenu = RecipeMenu(foods=json.dumps(foods), owner=request.user)
+    # newmenu.save()
+    # date = newmenu.date
 
-    # Create menu and show it
-    foods = createMenu()
-    newmenu = RecipeMenu(foods=json.dumps(foods), owner=request.user)
-    newmenu.save()
-    date = newmenu.date
-
-    return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True, "menudate": date})
+    recipe = get_object_or_404(RecipeMenu, pk=pk)
+    if recipe.owner != request.user:
+        raise PermissionDenied
+    
+    foods = json.loads(recipe.foods)
+    return render(request, 'menu.tmpl', {'foods': foods, "menuactive": True, "menudate": recipe.date})
 
 
 @login_required
@@ -194,4 +191,32 @@ class RecipeMenuList(LoginRequiredMixin, ListView):
         return context
 
     def get_queryset(self):
-        return RecipeMenu.objects.filter(owner=self.request.user).order_by('date')
+        return RecipeMenu.objects.filter(owner=self.request.user)
+
+
+class MenuCreateView(LoginRequiredMixin, CreateView):
+    form_class = CreateMenu
+    template_name = "menu_new.tmpl"
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('menulist')
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        form.instance.foods = json.dumps(createMenu())
+        return super().form_valid(form)
+
+
+class RecipeMenuDelete(LoginRequiredMixin, DeleteView):
+    model = RecipeMenu
+    template_name = "confirm_delete.tmpl"
+
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('menulist')
+    
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.object.owner != self.request.user:
+            raise PermissionDenied
+        # we use get instead of post to get a confirmation
+        return super().get(request, *args, **kwargs)
