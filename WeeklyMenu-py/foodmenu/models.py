@@ -39,7 +39,8 @@ class Recipe(models.Model):
 class QtyIngredient(models.Model):
     name = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=1)  # 1, 1/4, 1/2, etc
+    # quantity = models.IntegerField(default=1)  # 1, 1/4, 1/2, etc
+    quantity = models.DecimalField(max_digits=5, decimal_places=2, default=1.0)
     SIZE_TYPE_CHOICES = [
         ('TSP', 'Teaspoon'),
         ('TBSP', 'Tablespoon'),
@@ -48,7 +49,8 @@ class QtyIngredient(models.Model):
         ('QUART', 'Quart'),
         ('GALLON', 'Gallon'),
         ('LITER', 'Liter'),
-        ('BUNCH', 'Bunch')
+        ('BUNCH', 'Bunch'),
+        ('COUNT', 'Count')
     ]
     size = models.CharField(
         max_length=15,

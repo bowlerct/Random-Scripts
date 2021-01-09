@@ -1,0 +1,160 @@
+{ "recipes": 
+    [
+        { "name": "Keto Toast", "type": "Breakfast", "book": "",
+            "url": "https://ketosummit.com/quick-keto-toast-recipe/",
+            "ingredients":[
+                {"name": "almond flour", "quantity": 0.3, "size": "CUP"},
+                {"name": "baking powder", "quantity": 0.5, "size": "TSP"},
+                {"name": "salt", "quantity": 0.125, "size": "TSP"},
+                {"name": "eggs", "quantity": 1, "size": "COUNT"},
+                {"name": "ghee", "quantity": 2.5, "size": "TBSP"}
+            ]
+        },
+        { "name": "Sausage Egg Cheese Bites", "type": "Breakfast", "book": "",
+            "url": "https://www.maebells.com/sausage-egg-and-cheese-bites-low-carb-keto/",
+            "ingredients":[
+                {"name": "sausage", "quantity": 1, "size": "POUND"},
+                {"name": "eggs", "quantity": 3, "size": "COUNT"},
+                {"name": "cream cheese", "quantity": 4, "size": "OUNCE"},
+                {"name": "shredded cheese", "quantity": 1, "size": "CUP"},
+                {"name": "coconut flour", "quantity": 0.3, "size": "CUP"},
+                {"name": "baking powder", "quantity": 0.5, "size": "TSP"}
+            ]
+        },
+        { "name": "Zucchini Muffins", "type": "Breakfast", "book": "",
+            "url": "https://blog.bulletproof.com/zucchini-muffins-recipe-keto-paleo-3c/",
+            "ingredients":[
+                {"name": "zucchini", "quantity": 2, "size": "CUP"},
+                {"name": "green onion", "quantity": 1, "size": "COUNT"},
+                {"name": "thyme", "quantity": 2, "size": "COUNT"},
+                {"name": "coconut flour", "quantity": 0.5, "size": "CUP"},
+                {"name": "eggs", "quantity": 7, "size": "COUNT"},
+                {"name": "salt", "quantity": 0.5, "size": "TSP"},
+                {"name": "ground turmeric", "quantity": 0.5, "size": "TSP"},
+                {"name": "bacon", "quantity": 4, "size": "COUNT"},
+                {"name": "baking powder", "quantity": 0.5, "size": "TSP"},
+                {"name": "apple cider vinegar", "quantity": 0.5, "size": "TSP"},
+                {"name": "collagen peptides", "quantity": 1, "size": "COUNT"}
+            ]
+        },
+        { "name": "Sausage Spinach Quiche", "type": "Breakfast", "book": "",
+            "url": "https://www.homemadeinterest.com/sausage-and-spinach-crustless-quiche-low-carb-keto/",
+            "ingredients":[
+                {"name": "ground sausage", "quantity": 1, "size": "POUND" },
+                {"name": "cream cheese", "quantity": 8, "size":"OUNCE" },
+                {"name": "eggs", "quantity": 6, "size": "COUNT"},
+                {"name": "heavy cream", "quantity": 1, "size": "CUP"},
+                {"name": "shredded cheddar cheese", "quantity": 8, "size": "OUNCE"},
+                {"name": "baby spinach", "quantity": 5, "size": "OUNCE"}
+            ]
+        },
+
+        
+        { "name": "Thai Sweet Potato noodles", "type": "Dinner", "book": "", 
+            "url": "https://www.cookinglight.com/recipes/thai-sweet-potato-noodle-bowls",  
+            "ingredients":[
+                { "name": "sesame oil", "quantity": 2.5, "size": "TSP"},
+                { "name": "sweet potatoes", "quantity": 2, "size": "COUNT"},
+                { "name": "red bell pepper", "quantity": 1, "size": "COUNT"},
+                { "name": "spinach", "quantity": 3, "size": "CUP"},
+                { "name": "tofu", "quantity": 8, "size": "OUNCE"},
+                { "name": "coconut milk", "quantity": 0.5, "size": "CUP"},
+                { "name": "almond butter", "quantity": 3, "size": "TBSP"},
+                { "name": "cashews", "quantity": 0.25, "size": "CUP"},
+                { "name": "lime", "quantity": 1, "size": "COUNT"}
+            ]
+        },
+        { "name": "Keto Pizza", "type": "Dinner", "book": "", 
+            "url": "https://www.dietdoctor.com/recipes/keto-pizza",  
+            "ingredients":[]
+        },
+        { "name": "Lamb Burgers With Pistachio", "type": "Dinner", "book": "", 
+            "url": "https://thrivemarket.com/blog/lamb-burgers-with-pistachio-pesto",  
+            "ingredients":[]
+        },
+        { "name": "Lamb Curry", "type": "Dinner", "book": "", 
+            "url": "https://www.thespruceeats.com/rogan-josh-recipe-1957574",  
+            "ingredients":[]
+        },
+        { "name": "Pomegranate Flank Steak", "type": "Dinner", "book": "", 
+            "url": "https://www.runningtothekitchen.com/pomegranate-flank-steak/",  
+            "ingredients":[]
+        },
+        { "name": "Chimichurri Flank Steak", "type": "Dinner", "book": "", 
+            "url": "https://www.carbmanager.com/recipe/keto-chimichurri-flank-steak",  
+            "ingredients":[]
+        },
+        { "name": "Pot Roast", "type": "Dinner", "book": "", 
+            "url": "https://www.tasteofhome.com/recipes/ultimate-pot-roast/",  
+            "ingredients":[]
+        },
+        { "name": "Taco Salad", "type": "Dinner", "book": "", 
+            "url": "https://www.lowcarbmaven.com/healthy-low-carb-taco-salad/",  
+            "ingredients":[]
+        },
+        { "name": "Turkey Feta Meatballs", "type": "Dinner", "book": "",
+            "url": "https://www.ibreatheimhungry.com/sun-dried-tomato-feta-meatballs-low-carb-gluten-free/",  
+            "ingredients":[]
+        },
+        { "name": "Turkey Kale Rice Soup", "type": "Dinner", "book": "",
+            "url": "https://www.foodnetwork.com/recipes/giada-de-laurentiis/turkey-kale-and-brown-rice-soup-recipe-2041444",
+            "ingredients":[]
+        },
+        { "name": "Turkey Curry", "type": "Dinner", "book": "",
+            "url": "https://www.evolvingtable.com/ground-turkey-curry/#wprm-recipe-container-4967",
+            "ingredients":[]
+        },
+        { "name": "Chicken Sun Dried Tomato", "type": "Dinner", "book": "",
+            "url": "https://www.savorytooth.com/sun-dried-tomato-chicken/",
+            "ingredients":[]
+        },
+        { "name": "Peso Chicken Casserole", "type": "Dinner", "book": "",
+            "url": "https://www.dietdoctor.com/recipes/keto-pesto-chicken-casserole",
+            "ingredients":[]
+        },
+        { "name": "Bacon Ranch Chicken Casserole", "type": "Dinner", "book": "",
+            "url": "https://www.wholesomeyum.com/recipes/chicken-bacon-ranch-casserole-recipe-easy-low-carb/",
+            "ingredients":[]
+        },
+        { "name": "Balsamic Chicken Thighs", "type": "Dinner", "book": "",
+            "url": "https://www.sugarfreemom.com/recipes/crock-pot-balsamic-chicken-thighs/",
+            "ingredients":[]
+        },
+        { "name": "Lemon Garlic Chicken Thighs", "type": "Dinner", "book": "",
+            "url": "https://www.eatwell101.com/lemon-garlic-butter-thighs-and-green-beans-skillet",
+            "ingredients":[]
+        },
+        { "name": "Buffalo Shrimp Wraps", "type": "Dinner", "book": "",
+            "url": "https://www.delish.com/cooking/a26331032/buffalo-shrimp-lettuce-wraps-recipe/",
+            "ingredients":[]
+        },
+        { "name": "Shrimp Scampi", "type": "Dinner", "book": "",
+            "url": "https://ketogasm.com/keto-shrimp-scampi-recipe/",
+            "ingredients":[]
+        },
+        { "name": "Cauliflower Mac and Cheese", "type": "Dinner", "book": "",
+            "url": "https://www.wholesomeyum.com/recipes/cauliflower-mac-and-cheese-recipe-low-carb-keto-gluten-free/#pinit",
+            "ingredients":[]
+        },
+        { "name": "Better Keto Pizza", "type": "Dinner", "book": "",
+            "url": "https://www.thedietchefs.com/keto-pizza-10-minutes-better-fathead-crust-keto-pizza/",
+            "ingredients":[]
+        },
+        { "name": "Sausage Cabbage", "type": "Dinner", "book": "",
+            "url": "https://www.lowcarbmaven.com/super-easy-sausage-cabbage-dinner/",
+            "ingredients":[]
+        },
+        { "name": "Jalapeno Poppers", "type": "Dinner", "book": "",
+            "url": "https://www.wholesomeyum.com/recipes/cream-cheese-jalapeno-poppers-with-bacon-low-carb-gluten-free/#pinit",
+            "ingredients":[]
+        },
+        { "name": "Cool Ranch Zucchini", "type": "Dinner", "book": "",
+            "url": "https://www.delish.com/cooking/recipe-ideas/a22344312/cool-ranch-zucchini-chips/",
+            "ingredients":[]
+        },
+        { "name": "Creamy Broccoli", "type": "Dinner", "book": "",
+            "url": "https://gimmedelicious.com/creamy-broccoli/#wprm-recipe-container-14264",
+            "ingredients":[]
+        }
+    ]
+}
