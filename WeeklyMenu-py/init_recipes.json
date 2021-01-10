@@ -66,95 +66,333 @@
         },
         { "name": "Keto Pizza", "type": "Dinner", "book": "", 
             "url": "https://www.dietdoctor.com/recipes/keto-pizza",  
-            "ingredients":[]
+            "ingredients":[
+                { "name": "eggs", "quantity": 4, "size": "COUNT"},
+                { "name": "mozzarella", "quantity": 1.5, "size": "CUP"},
+                { "name": "tomato sauce", "quantity": 3, "size": "TSP"},
+                { "name": "provolone", "quantity": 1.25, "size": "CUP"},
+                { "name": "pepperoni", "quantity": 1.5, "size": "OUNCE"}
+            ]
         },
         { "name": "Lamb Burgers With Pistachio", "type": "Dinner", "book": "", 
             "url": "https://thrivemarket.com/blog/lamb-burgers-with-pistachio-pesto",  
-            "ingredients":[]
+            "ingredients":[
+                { "name": "ground lamb", "quantity": 1.5, "size": "POUND"},
+                { "name": "cumin", "quantity": 1, "size": "TSP"},
+                { "name": "cinnamon", "quantity": 0.25, "size": "TSP"},
+                { "name": "allspice", "quantity": 0.25, "size": "TSP"},
+                { "name": "salt", "quantity": 0.5, "size": "TSP"},
+                { "name": "peppercorns", "quantity": 0.25, "size": "TSP"},
+                { "name": "mint", "quantity": 0.5, "size": "CUP"},
+                { "name": "parsley", "quantity": 0.25, "size": "CUP"},
+                { "name": "garlic clove", "quantity": 1, "size": "COUNT"},
+                { "name": "pistachios", "quantity": 1, "size": "CUP"},
+                { "name": "lemon juice", "quantity": 1, "size": "TSP"},
+                { "name": "olive oil", "quantity": 0.5, "size": "CUP"}
+            ]
         },
         { "name": "Lamb Curry", "type": "Dinner", "book": "", 
             "url": "https://www.thespruceeats.com/rogan-josh-recipe-1957574",  
-            "ingredients":[]
+            "ingredients":[
+                { "name": "lamb", "quantity": 2.5, "size": "POUND"},
+                { "name": "yogurt", "quantity": 0.5, "size": "CUP"},
+                { "name": "vegetable oil", "quantity": 4, "size": "TBSP"},
+                { "name": "cinnamon stick", "quantity": 1, "size": "COUNT"},
+                { "name": "cardamon pod", "quantity": 5, "size": "COUNT"},
+                { "name": "cloves", "quantity": 8, "size": "COUNT"},
+                { "name": "bay leaves", "quantity": 2, "size": "COUNT"},
+                { "name": "peppercorns", "quantity": 1, "size": "TSP"},
+                { "name": "onion", "quantity": 2, "size": "COUNT"},
+                { "name": "cumin", "quantity": 1, "size": "TSP"},
+                { "name": "ginger paste", "quantity": 2, "size": "TBSP"},
+                { "name": "coriander", "quantity": 2, "size": "TSP"},
+                { "name": "tumeric powder", "quantity": 1, "size": "TSP"},
+                { "name": "red chilies", "quantity": 3, "size": "COUNT"},
+                { "name": "garam masala", "quantity": 2, "size": "TSP"},
+                { "name": "beef stock", "quantity": 2, "size": "CUP"},
+                { "name": "water", "quantity": 1, "size": "CUP"},
+                { "name": "cream", "quantity": 5, "size": "TSP"}
+            ]
         },
         { "name": "Pomegranate Flank Steak", "type": "Dinner", "book": "", 
             "url": "https://www.runningtothekitchen.com/pomegranate-flank-steak/",  
-            "ingredients":[]
+            "ingredients":[
+                { "name": "flank steak", "quantity": 1.5, "size": "POUND"},
+                { "name": "olive oil", "quantity": 3, "size": "TBSP"},
+                { "name": "brown sugar", "quantity": 2, "size": "TBSP"},
+                { "name": "balsamic vinegar", "quantity": 3, "size": "TBSP"},
+                { "name": "pomegranate", "quantity": 1, "size": "COUNT"},
+                { "name": "cranberries", "quantity": 0.75, "size": "CUP"},
+                { "name": "rosemary", "quantity": 1, "size": "TBSP"}
+            ]
         },
         { "name": "Chimichurri Flank Steak", "type": "Dinner", "book": "", 
             "url": "https://www.carbmanager.com/recipe/keto-chimichurri-flank-steak",  
-            "ingredients":[]
+            "ingredients":[
+                { "name": "flank steak", "quantity": 1.5, "size": "PUND"},
+                { "name": "olive oil", "quantity": 1.5, "size": "TBSP"},
+                { "name": "salt", "quantity": 0.5, "size": "TSP"},
+                { "name": "peppercorn", "quantity": 0.25, "size": "TSP"},
+                { "name": "chili powder", "quantity": 0.5, "size": "TSP"},
+                { "name": "paprika", "quantity": 0.5, "size": "TBSP"},
+                { "name": "onion powder", "quantity": 1, "size": "TSP"},
+                { "name": "cilantro", "quantity": 0.5, "size": "CUP"},
+                { "name": "parsley", "quantity": 1, "size": "TBSP"},
+                { "name": "oregano", "quantity": 1, "size": "TBSP"},
+                { "name": "garlic clove", "quantity": 1, "size": "COUNT"},
+                { "name": "red onion", "quantity": 1, "size": "TBSP"},
+                { "name": "serrano pepper", "quantity": 1, "size": "COUNT"},
+                { "name": "lime", "quantity": 1, "size": "COUNT"}
+            ]
         },
         { "name": "Pot Roast", "type": "Dinner", "book": "", 
             "url": "https://www.tasteofhome.com/recipes/ultimate-pot-roast/",  
-            "ingredients":[]
+            "ingredients":[
+                { "name": "chuck roast", "quantity": 3, "size": "POUND"},
+                { "name": "peppercorn", "quantity": 2, "size": "TSP"},
+                { "name": "vegetable oil", "quantity": 2, "size": "TBSP"},
+                { "name": "onion", "quantity": 2, "size": "COUNT"},
+                { "name": "celery ribs", "quantity": 2, "size": "COUNT"},
+                { "name": "garlic cloves", "quantity": 3, "size": "COUNT"},
+                { "name": "tomato paste", "quantity": 1, "size": "TBSP"},
+                { "name": "thyme", "quantity": 1, "size": "TBSP"},
+                { "name": "bay leaves", "quantity": 2, "size": "COUNT"},
+                { "name": "beef broth", "quantity": 2, "size": "CUP"},
+                { "name": "carrots", "quantity": 6, "size": "COUNT"},
+                { "name": "red wine vinegar", "quantity": 1, "size": "TBSP"},
+                { "name": "parsley", "quantity": 2, "size": "TBSP"},
+                { "name": "parsnips", "quantity": 4, "size": "COUNT"}
+            ]
         },
         { "name": "Taco Salad", "type": "Dinner", "book": "", 
             "url": "https://www.lowcarbmaven.com/healthy-low-carb-taco-salad/",  
-            "ingredients":[]
+            "ingredients":[
+                { "name": "ground beef", "quantity": 1, "size": "POUND"},
+                { "name": "Romaine hearts", "quantity": 2, "size": "COUNT"},
+                { "name": "avacado", "quantity": 1, "size": "COUNT"},
+                { "name": "cheddar cheese", "quantity": 4, "size": "OUNCE"},
+                { "name": "red onion", "quantity": 2, "size": "TBSP"},
+                { "name": "grape tomatoes", "quantity": 3, "size": "OUNCE"},
+                { "name": "cumin", "quantity": 1, "size": "TSP"}
+            ]
         },
         { "name": "Turkey Feta Meatballs", "type": "Dinner", "book": "",
             "url": "https://www.ibreatheimhungry.com/sun-dried-tomato-feta-meatballs-low-carb-gluten-free/",  
-            "ingredients":[]
+            "ingredients":[
+                { "name": "ground turkey", "quantity": 1, "size": "POUND"},
+                { "name": "feta cheese", "quantity": 0.25, "size": "CUP"},
+                { "name": "sundried tomatoes", "quantity": 2, "size": "TBSP"},
+                { "name": "thyme", "quantity": 1, "size": "TBSP"},
+                { "name": "eggs", "quantity": 1, "size": "COUNT"},
+                { "name": "garlic powder", "quantity": 0.5, "size": "TSP"},
+                { "name": "almond flour", "quantity": 0.25, "size": "CUP"}
+            ]
         },
         { "name": "Turkey Kale Rice Soup", "type": "Dinner", "book": "",
             "url": "https://www.foodnetwork.com/recipes/giada-de-laurentiis/turkey-kale-and-brown-rice-soup-recipe-2041444",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "olive oil", "quantity": 2, "size": "TSP"},
+                { "name": "shallots", "quantity": 5, "size": "COUNT"},
+                { "name": "carrots", "quantity": 3, "size": "COUNT"},
+                { "name": "red bell pepper", "quantity": 1, "size": "COUNT"},
+                { "name": "turkey", "quantity": 8, "size": "OUNCE"},
+                { "name": "herbs de provence", "quantity": 1, "size": "TBSP"},
+                { "name": "chicken broth", "quantity": 4, "size": "CUP"},
+                { "name": "diced tomatoes", "quantity": 15, "size": "OUNCE"},
+                { "name": "brown rice", "quantity": 1, "size": "CUP"},
+                { "name": "kale", "quantity": 1, "size": "BUNCH"},
+                { "name": "salt", "quantity": 1, "size": "TSP"},
+                { "name": "peppercorn", "quantity": 0.5, "size": "TSP"},
+                { "name": "parsley", "quantity": 0.25, "size": "CUP"},
+                { "name": "parmesan", "quantity": 0.25, "size": "CUP"}
+            ]
         },
         { "name": "Turkey Curry", "type": "Dinner", "book": "",
             "url": "https://www.evolvingtable.com/ground-turkey-curry/#wprm-recipe-container-4967",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "onion", "quantity": 1, "size": "CUP"},
+                { "name": "olive oil", "quantity": 1, "size": "TBSP"},
+                { "name": "garlic cloves", "quantity": 2, "size": "COUNT"},
+                { "name": "ground turkey", "quantity": 1, "size": "POUND"},
+                { "name": "coconut milk", "quantity": 1, "size": "CUP"},
+                { "name": "curry powder", "quantity": 1.5, "size": "TSP"},
+                { "name": "garam masala", "quantity": 1, "size": "TSP"},
+                { "name": "tumeric", "quantity": 0.125, "size": "TSP"},
+                { "name": "cayenne", "quantity": 0.125, "size": "TSP"},
+                { "name": "salt", "quantity": 1, "size": "TSP"},
+                { "name": "peppercorn", "quantity": 0.5, "size": "TSP"},
+                { "name": "rice", "quantity": 2, "size": "CUP"}
+            ]
         },
         { "name": "Chicken Sun Dried Tomato", "type": "Dinner", "book": "",
             "url": "https://www.savorytooth.com/sun-dried-tomato-chicken/",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "chicken breasts", "quantity": 1, "size": "POUND"},
+                { "name": "baby spinach", "quantity": 1, "size": "CUP"},
+                { "name": "heavy whipping cream", "quantity": 0.5, "size": "CUP"},
+                { "name": "parmesan", "quantity": 0.5, "size": "CUP"},
+                { "name": "sundried tomatoes", "quantity": 0.25, "size": "CUP"},
+                { "name": "garlic cloves", "quantity": 5, "size": "COUNT"},
+                { "name": "olive oil", "quantity": 2, "size": "TBSP"},
+                { "name": "butter", "quantity": 2, "size": "TBSP"},
+                { "name": "oregano", "quantity": 1, "size": "TSP"}
+            ]
         },
-        { "name": "Peso Chicken Casserole", "type": "Dinner", "book": "",
+        { "name": "Pesto Chicken Casserole", "type": "Dinner", "book": "",
             "url": "https://www.dietdoctor.com/recipes/keto-pesto-chicken-casserole",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "chicken thighs", "quantity": 1.5, "size": "POUND"},
+                { "name": "coconut oil", "quantity": 2, "size": "TBSP"},
+                { "name": "red pesto", "quantity": 0.33, "size": "CUP"},
+                { "name": "heavy whipping cream", "quantity": 1.25, "size": "CUP"},
+                { "name": "pitted olives", "quantity": 3, "size": "OUNCE"},
+                { "name": "feta cheese", "quantity": 5, "size": "OUNCE"},
+                { "name": "garlic clove", "quantity": 1, "size": "COUNT"}
+            ]
         },
         { "name": "Bacon Ranch Chicken Casserole", "type": "Dinner", "book": "",
             "url": "https://www.wholesomeyum.com/recipes/chicken-bacon-ranch-casserole-recipe-easy-low-carb/",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "chicken breast", "quantity": 2, "size": "POUND"},
+                { "name": "bacon", "quantity": 8, "size": "COUNT"},
+                { "name": "garlic cloves", "quantity": 3, "size": "COUNT"},
+                { "name": "ranch dressing", "quantity": 0.75, "size": "CUP"},
+                { "name": "mozzarella", "quantity": 1, "size": "CUP"},
+                { "name": "cheddar", "quantity": 1, "size": "CUP"},
+                { "name": "spinach", "quantity": 1, "size": "POUND"}
+            ]
         },
         { "name": "Balsamic Chicken Thighs", "type": "Dinner", "book": "",
             "url": "https://www.sugarfreemom.com/recipes/crock-pot-balsamic-chicken-thighs/",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "garlic powder", "quantity": 1, "size": "TSP"},
+                { "name": "dried basil", "quantity": 1, "size": "TSP"},
+                { "name": "salt", "quantity": 0.5, "size": "TSP"},
+                { "name": "peppercorn", "quantity": 0.5, "size": "TSP"},
+                { "name": "onion", "quantity": 2, "size": "TSP"},
+                { "name": "garlic cloves", "quantity": 4, "size": "COUNT"},
+                { "name": "olive oil", "quantity": 1, "size": "TBSP"},
+                { "name": "balsamic vinegar", "quantity": 0.5, "size": "CUP"},
+                { "name": "chicken thighs", "quantity": 8, "size": "COUNT"},
+                { "name": "parsley", "quantity": 0.25, "size": "CUP"}
+            ]
         },
         { "name": "Lemon Garlic Chicken Thighs", "type": "Dinner", "book": "",
             "url": "https://www.eatwell101.com/lemon-garlic-butter-thighs-and-green-beans-skillet",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "chicken thighs", "quantity": 6, "size": "COUNT"},
+                { "name": "green beans", "quantity": 1, "size": "POUND"},
+                { "name": "butter", "quantity": 3, "size": "TBSP"},
+                { "name": "garlic cloves", "quantity": 4, "size": "COUNT"},
+                { "name": "paprika", "quantity": 1, "size": "TSP"},
+                { "name": "onion powder", "quantity": 1, "size": "TSP"},
+                { "name": "salt", "quantity": 0.25, "size": "TSP"},
+                { "name": "peppercorn", "quantity": 0.25, "size": "TSP"},
+                { "name": "lemon", "quantity": 1, "size": "COUNT"},
+                { "name": "chicken stock", "quantity": 0.25, "size": "CUP"},
+                { "name": "sriracha", "quantity": 1, "size": "TBSP"},
+                { "name": "red chili pepper flakes", "quantity": 0.25, "size": "TSP"},
+                { "name": "parsley", "quantity": 0.25, "size": "CUP"}
+            ]
         },
         { "name": "Buffalo Shrimp Wraps", "type": "Dinner", "book": "",
             "url": "https://www.delish.com/cooking/a26331032/buffalo-shrimp-lettuce-wraps-recipe/",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "garlic cloves", "quantity": 0.25, "size": "TBSP"},
+                { "name": "hot sauce", "quantity": 0.25, "size": "CUP"},
+                { "name": "olive oil", "quantity": 1, "size": "TBSP"},
+                { "name": "shrimp", "quantity": 1, "size": "POUND"},
+                { "name": "romaine", "quantity": 1, "size": "BUNCH"},
+                { "name": "red onion", "quantity": 0.25, "size": "COUNT"},
+                { "name": "celery ribs", "quantity": 1, "size": "COUNT"},
+                { "name": "blue cheese", "quantity": 0.5, "size": "CUP"}
+            ]
         },
         { "name": "Shrimp Scampi", "type": "Dinner", "book": "",
             "url": "https://ketogasm.com/keto-shrimp-scampi-recipe/",
-            "ingredients":[]
-        },
-        { "name": "Cauliflower Mac and Cheese", "type": "Dinner", "book": "",
-            "url": "https://www.wholesomeyum.com/recipes/cauliflower-mac-and-cheese-recipe-low-carb-keto-gluten-free/#pinit",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "summer squash", "quantity": 2, "size": "COUNT"},
+                { "name": "butter", "quantity": 2, "size": "TBSP"},
+                { "name": "chicken broth", "quantity": 0.25, "size": "CUP"},
+                { "name": "lemon juice", "quantity": 2, "size": "TBSP"},
+                { "name": "red chili flakes", "quantity": 0.125, "size": "TSP"},
+                { "name": "shrimp", "quantity": 1, "size": "POUND"},
+                { "name": "parsley", "quantity": 2, "size": "TBSP"},
+                { "name": "garlic cloves", "quantity": 1, "size": "COUNT"}
+            ]
         },
         { "name": "Better Keto Pizza", "type": "Dinner", "book": "",
             "url": "https://www.thedietchefs.com/keto-pizza-10-minutes-better-fathead-crust-keto-pizza/",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "almond flour", "quantity": 1.5, "size": "CUP"},
+                { "name": "coconut flour", "quantity": 2, "size": "TBSP"},
+                { "name": "whey protein powder", "quantity": 0.67, "size": "TBSP"},
+                { "name": "pizza sauce", "quantity": 0.25, "size": "CUP"},
+                { "name": "xanthan gum", "quantity": 0.5, "size": "TSP"},
+                { "name": "baking powder", "quantity": 0.5, "size": "TSP"},
+                { "name": "garlic powder", "quantity": 0.25, "size": "TSP"},
+                { "name": "onion powder", "quantity": 0.25, "size": "TSP"},
+                { "name": "eggs", "quantity": 2, "size": "COUNT"},
+                { "name": "coconut oil", "quantity": 1, "size": "TBSP"}
+            ]
         },
         { "name": "Sausage Cabbage", "type": "Dinner", "book": "",
             "url": "https://www.lowcarbmaven.com/super-easy-sausage-cabbage-dinner/",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "sausage links", "quantity": 1, "size": "POUND"},
+                { "name": "cabbage", "quantity": 1, "size": "POUND"},
+                { "name": "bacon", "quantity": 4, "size": "COUNT"},
+                { "name": "onion", "quantity": 2, "size": "OUNCE"},
+                { "name": "garlic cloves", "quantity": 1, "size": "COUNT"}
+            ]
+        },
+
+
+
+        { "name": "Cauliflower Mac and Cheese", "type": "Dinner", "book": "",
+            "url": "https://www.wholesomeyum.com/recipes/cauliflower-mac-and-cheese-recipe-low-carb-keto-gluten-free/#pinit",
+            "ingredients":[
+                { "name": "cauliflower", "quantity": 1, "size": "COUNT"},
+                { "name": "butter", "quantity": 3, "size": "TBSP"},
+                { "name": "cheddar cheese", "quantity": 1, "size": "CUP"},
+                { "name": "heavy cream", "quantity": 0.25, "size": "CUP"},
+                { "name": "almond milk", "quantity": 0.25, "size": "CUP"}
+            ]
         },
         { "name": "Jalapeno Poppers", "type": "Dinner", "book": "",
             "url": "https://www.wholesomeyum.com/recipes/cream-cheese-jalapeno-poppers-with-bacon-low-carb-gluten-free/#pinit",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "jalapeno", "quantity": 6, "size": "COUNT"},
+                { "name": "cheddar cheese", "quantity": 0.25, "size": "CUP"},
+                { "name": "cream cheese", "quantity": 3, "size": "OUNCE"},
+                { "name": "green onions", "quantity": 0.25, "size": "CUP"},
+                { "name": "garlic cloves", "quantity": 2, "size": "COUNT"},
+                { "name": "cilantro", "quantity": 1, "size": "TBSP"},
+                { "name": "bacon bits", "quantity": 0.25, "size": "CUP"}
+            ]
         },
         { "name": "Cool Ranch Zucchini", "type": "Dinner", "book": "",
             "url": "https://www.delish.com/cooking/recipe-ideas/a22344312/cool-ranch-zucchini-chips/",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "zucchini", "quantity": 2, "size": "COUNT"},
+                { "name": "olive oil", "quantity": 1, "size": "TBSP"},
+                { "name": "ranch seasoning", "quantity": 1, "size": "TBSP"},
+                { "name": "oregano", "quantity": 1, "size": "TSP"}
+            ]
         },
         { "name": "Creamy Broccoli", "type": "Dinner", "book": "",
             "url": "https://gimmedelicious.com/creamy-broccoli/#wprm-recipe-container-14264",
-            "ingredients":[]
+            "ingredients":[
+                { "name": "bacon", "quantity": 0.25, "size": "CUP"},
+                { "name": "butter", "quantity": 1, "size": "TBSP"},
+                { "name": "garlic cloves", "quantity": 4, "size": "COUNT"},
+                { "name": "broccoli florets", "quantity": 3, "size": "CUP"},
+                { "name": "garlic powder", "quantity": 0.25, "size": "TSP"},
+                { "name": "crushed red pepper", "quantity": 0.25, "size": "TSP"},
+                { "name": "heavy cream", "quantity": 1, "size": "CUP"},
+                { "name": "cheddar", "quantity": 0.5, "size": "CUP"},
+                { "name": "parmesan", "quantity": 0.25, "size": "CUP"}
+            ]
         }
     ]
 }
