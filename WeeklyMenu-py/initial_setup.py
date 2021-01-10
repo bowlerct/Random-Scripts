@@ -30,7 +30,7 @@ if __name__ == '__main__':
     if local_user.count() == 1:
         local_user = local_user[0]
     else:
-        local_usefoodmenu/models.pyr = User(first_name="Menu", last_name="Admin", email='', username='menuadmin')
+        local_user = User(first_name="Menu", last_name="Admin", email='', username='menuadmin')
         local_user.set_password("p@ssword1")
         local_user.save()
         print("Created admin {}".format(local_user.username))

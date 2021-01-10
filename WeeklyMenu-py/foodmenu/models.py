@@ -50,7 +50,8 @@ class QtyIngredient(models.Model):
         ('GALLON', 'Gallon'),
         ('LITER', 'Liter'),
         ('BUNCH', 'Bunch'),
-        ('COUNT', 'Count')
+        ('COUNT', 'Count'),
+        ('POUND', 'Pound')
     ]
     size = models.CharField(
         max_length=15,
