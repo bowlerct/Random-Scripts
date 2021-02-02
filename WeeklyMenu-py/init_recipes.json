@@ -50,6 +50,10 @@
         },
 
 
+        { "name": "Asian Sesame Beef", "type": "Dinner", "book": "Home", 
+            "url": "",
+            "ingredients":[]
+        },
         { "name": "Bacon Ranch Chicken Casserole", "type": "Dinner", "book": "",
             "url": "https://www.wholesomeyum.com/recipes/chicken-bacon-ranch-casserole-recipe-easy-low-carb/",
             "ingredients":[
@@ -105,6 +109,14 @@
                 { "name": "blue cheese", "quantity": 0.5, "size": "CUP"}
             ]
         },
+        { "name": "Cajun Salmon", "type": "Dinner", "book": "Home", 
+            "url": "",
+            "ingredients":[]
+        },
+        { "name": "Chicken Strip Salad with Honey Mustard", "type": "Dinner", "book": "Home", 
+            "url": "",
+            "ingredients":[]
+        },
         { "name": "Chicken Sun Dried Tomato", "type": "Dinner", "book": "",
             "url": "https://www.savorytooth.com/sun-dried-tomato-chicken/",
             "ingredients":[
@@ -137,6 +149,10 @@
                 { "name": "serrano pepper", "quantity": 1, "size": "COUNT"},
                 { "name": "lime", "quantity": 1, "size": "COUNT"}
             ]
+        },
+        { "name": "Crab Cakes", "type": "Dinner", "book": "Home", 
+            "url": "",
+            "ingredients":[]
         },
         { "name": "Keto Pizza", "type": "Dinner", "book": "", 
             "url": "https://www.dietdoctor.com/recipes/keto-pizza",  
@@ -247,6 +263,10 @@
                 { "name": "rosemary", "quantity": 1, "size": "TBSP"}
             ]
         },
+        { "name": "Pork Souvlaki Bowl", "type": "Dinner", "book": "Home", 
+            "url": "",
+            "ingredients":[]
+        },
         { "name": "Pot Roast", "type": "Dinner", "book": "", 
             "url": "https://www.tasteofhome.com/recipes/ultimate-pot-roast/",  
             "ingredients":[
@@ -288,6 +308,10 @@
                 { "name": "parsley", "quantity": 2, "size": "TBSP"},
                 { "name": "garlic cloves", "quantity": 1, "size": "COUNT"}
             ]
+        },
+        { "name": "Steak Fajitas", "type": "Dinner", "book": "Home",
+            "url": "",
+            "ingredients":[]
         },
         { "name": "Taco Salad", "type": "Dinner", "book": "", 
             "url": "https://www.lowcarbmaven.com/healthy-low-carb-taco-salad/",  
